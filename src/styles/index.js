@@ -6,18 +6,20 @@ import Header from './Header';
 import Main from './Main';
 import Section from './Section';
 import Footer from './Footer';
-import Bottom from './Button';
+import Heading from './Heading';
+import Button from './Button';
 import InlineLink from './InlineLink';
 
 export {
-    theme,
-    GlobalStyle,
-    mixins,
-    media,
-    Header,
-    Main,
-    Section,
-    Footer,
-    Bottom,
-    InlineLink,
-}
+  theme,
+  GlobalStyle,
+  mixins,
+  media,
+  Header,
+  Main,
+  Section,
+  Footer,
+  Heading,
+  Button,
+  InlineLink,
+};

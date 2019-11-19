@@ -1,97 +1,61 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+## 个人网站搭建
+技术栈： react + gatsby
+### 手把手教你搭建属于自己的在线简历
+#### 1. gatsby new gatsby-website
+gatsby[https://www.gatsbyjs.org/]是react推荐创建静态网页的生成器。
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+#### 2. 设计好自己的页面板块((由于是个人在线简历，所以内容和简历格式一样):
+如网页必填基本样式:
+<br>
+加载动画
+<br>
+头部导航栏样式
+<br>
+网页内容划分:
+<br>
+about-page : 姓名 学校 联系方式 求职岗位 个人擅长技术栈
+<br>
+jobs-page:  实习经历
+<br>
+projects-page: 项目经验
+<br>
+hero-page: 在校期间获得的荣誉证书
+<br>
+result-page: 自我评价
+<br>
+featured-page: 对未来的职业规划 
+<br>
+侧边个人联系信息展示
+如：email, github, blog, phone等
+<br>
+尾部个人信息展示
+如：email, github, blog, phone等
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
-## 🚀 Quick start
+#### 3. 数据加载
+<br>
+使用GraphQL加载数据到react中
 
-1.  **Create a Gatsby site.**
+###### 为什么要使用GraphQL来加载数据？
+GraphQL返回的数据以与你要求的形状完全相同的形式返回，而不必在网络上传输，因为它已在构建时收集， 因此无需担心请求和等待数据，只需使用GraphQL查询查询所需的数据，该数据就会在需要时显示。由于所有数据都在数据层中合并，因此甚至可以同时查询多个源。详情戳[https://www.gatsbyjs.org/docs/graphql-concepts/]
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+###### 什么是GraphQL？
+GraphQL是一种查询语言（其名称的QL部分）。如果熟悉SQL，它的工作方式非常相似。使用特殊的语法，可以在组件中描述所需的数据，然后将这些数据提供给你。
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+###### 如何使用GraphQL？
+Gatsby使用GraphQL启用页面和StaticQuery组件来声明它们及其子组件所需的数据。然后，当组件需要时，Gatsby可使这些数据在浏览器中可用。来自任何数量来源的数据都可以在一个统一的层中进行查询
 
-1.  **Start developing.**
+#### 4.前端小技巧
+###### 1.使用styled-components开发css
+styled-components 是一个常用的 css in js 类库。和所有同类型的类库一样，通过 js 赋能解决了原生 css 所不具备的能力，比如变量、循环、函数等。诸如 sass&less 等预处理可以解决部分 css 的局限性，但还是要学习新的语法，而且需要对其编译，其复杂的 webpack 配置也总是让开发者抵触。而 styled-components 很好的解决了这些问题，很适合 React 技术栈的项目开发。
+<br>
+不懂可戳[https://zhuanlan.zhihu.com/p/28876652]
 
-    Navigate into your new site’s directory and start it up.
+###### 2.使用scrollreveal显示向下滑动时候的动画效果
+演示戳[https://scrollrevealjs.org/]
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+###### 3.
 
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+#### 5.样式编写
+每个页面采用样式分离的格式 先css,然后使用HTML 数据传入使用propTypes定制数据
+这里大家就可以发挥自己的想象啦， 这里给大家推荐一些好看的网站，大家按照自己的审美取其精华去其糟粕，再加以自己的创新便完成了在线个人简历，希望能够对大家有所帮助， 记得给个start哦～ 
