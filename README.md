@@ -7,9 +7,12 @@ gatsby[https://www.gatsbyjs.org/]是react推荐创建静态网页的生成器。
 #### 2. 设计好自己的页面板块((由于是个人在线简历，所以内容和简历格式一样):
 如网页必填基本样式:
 <br>
-加载动画
+加载动画: loader.js 使用animeJs[https://www.animejs.cn/documentation/]的svg
+动画绘制
 <br>
-头部导航栏样式
+头部组件: header.js
+<br>
+导航栏组件：nav.js
 <br>
 网页内容划分:
 <br>
@@ -34,7 +37,7 @@ featured-page: 对未来的职业规划
 
 #### 3. 数据加载
 <br>
-使用GraphQL加载数据到react中
+使用GraphQL加载数据到react中, 组件间的值传递使用prop-components,
 
 ###### 为什么要使用GraphQL来加载数据？
 GraphQL返回的数据以与你要求的形状完全相同的形式返回，而不必在网络上传输，因为它已在构建时收集， 因此无需担心请求和等待数据，只需使用GraphQL查询查询所需的数据，该数据就会在需要时显示。由于所有数据都在数据层中合并，因此甚至可以同时查询多个源。详情戳[https://www.gatsbyjs.org/docs/graphql-concepts/]
